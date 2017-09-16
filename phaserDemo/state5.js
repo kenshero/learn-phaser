@@ -15,7 +15,6 @@ demo.state5.prototype = {
 }
 
 function changeState(i, stateNum){
-  console.log(i);
   game.state.start('state'+ stateNum)
 }
 
