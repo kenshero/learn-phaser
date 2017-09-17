@@ -44,9 +44,11 @@ demo.state1.prototype = {
       player.body.velocity.y = 0
     }
     if(cursors.left.isDown) {
+      player.scale.setTo(-0.2, 0.2)
       player.body.velocity.x = -vel
     }
     else if(cursors.right.isDown){
+      player.scale.setTo(-0.2, 0.2)
       player.body.velocity.x = vel
     }
     else {
