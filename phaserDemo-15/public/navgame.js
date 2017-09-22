@@ -58,10 +58,11 @@ var GameNavState = {
     } else if(game.input.keyboard.isDown(Phaser.Keyboard.EIGHT)){
       textTest.destroy();
       this.changeNav(xCir, 8)
-      textTest = gameNav.add.text(750, 10, "Fucking Test", {fill: '#10ff10'})
+      textTest = gameNav.add.text(750, 10, "Text Test", {fill: '#10ff10'})
 
     } else if(game.input.keyboard.isDown(Phaser.Keyboard.NINE)){
       this.changeNav(xCir, 9)
+      textTest = gameNav.add.text(750, 10, "Fucking Test", {fill: '#10ff10'})
     }
   },
   changeNav: function(xCir, currentState){
