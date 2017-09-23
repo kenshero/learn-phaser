@@ -1,2 +1,4 @@
 .firebaserc
 firebase.json
+node_modules
+dist
