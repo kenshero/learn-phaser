@@ -1,4 +1,9 @@
-var barrel, bullets, velocity = 1000, nextFire = 0, fireRate = 200, enemy, bullet, enemyGroup;
+import game from './main'
+import { initialKeyListener } from './utils'
+
+
+const demo = {}
+let barrel, bullets, velocity = 1000, nextFire = 0, fireRate = 200, enemy, bullet, enemyGroup;
 demo.state2 = function(){};
 
 demo.state2.prototype = {
@@ -9,7 +14,7 @@ demo.state2.prototype = {
   },
   create: function(){
     game.stage.backgroundColor = '#4286f4'
-    initialKeyListener()
+    initialKeyListener(game)
 
     var base = game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'base')
     base.anchor.setTo(0.5)
@@ -75,3 +80,5 @@ demo.state2.prototype = {
     enemy.kill()
   }
 }
+
+export default demo

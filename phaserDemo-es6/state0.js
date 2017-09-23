@@ -1,5 +1,7 @@
 import game from './main'
 
+import { initialKeyListener } from './utils'
+
 const demo = {}
 let player, speed = 4;
 
@@ -21,7 +23,7 @@ demo.state0.prototype = {
     player = game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'player')
     player.anchor.setTo(1, -1)
     player.scale.setTo(0.3)
-    initialKeyListener()
+    initialKeyListener(game)
     game.physics.enable(player)
     player.body.collideWorldBounds = true
     player.animations.add('walk', [0, 1, 2, 3, 4])
@@ -60,33 +62,6 @@ demo.state0.prototype = {
       }
     }
   }
-}
-
-function changeState(i, stateNum){
-  console.log('state :', stateNum);
-  game.state.start('state'+ stateNum)
-}
-
-function addKeyListener(key, fn, state){
-  game.input.keyboard.addKey(key).onDown.add(
-    fn,
-    null,
-    null,
-    state
-  )
-}
-
-function initialKeyListener(){
-  addKeyListener(Phaser.Keyboard.ZERO, changeState, 0)
-  addKeyListener(Phaser.Keyboard.ONE, changeState, 1)
-  addKeyListener(Phaser.Keyboard.TWO, changeState, 2)
-  addKeyListener(Phaser.Keyboard.THREE, changeState, 3)
-  addKeyListener(Phaser.Keyboard.FOUR, changeState, 4)
-  addKeyListener(Phaser.Keyboard.FIVE, changeState, 5)
-  addKeyListener(Phaser.Keyboard.SIX, changeState, 6)
-  addKeyListener(Phaser.Keyboard.SEVEN, changeState, 7)
-  addKeyListener(Phaser.Keyboard.EIGHT, changeState, 8)
-  addKeyListener(Phaser.Keyboard.NINE, changeState, 9)
 }
 
 export default demo

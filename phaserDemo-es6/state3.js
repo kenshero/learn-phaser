@@ -1,4 +1,8 @@
-var sound;
+import game from './main'
+import { initialKeyListener } from './utils'
+
+const demo = {}
+let sound
 demo.state3 = function(){};
 
 demo.state3.prototype = {
@@ -10,7 +14,7 @@ demo.state3.prototype = {
   },
   create: function(){
     game.stage.backgroundColor = '#95a6c1'
-    initialKeyListener()
+    initialKeyListener(game)
 
     sound = game.add.audio('pops')
     sound.addMarker("low", 0, 0.5)
@@ -44,3 +48,5 @@ demo.state3.prototype = {
     sound.play("high")
   }
 }
+
+export default demo

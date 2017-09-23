@@ -1,3 +1,9 @@
+import game from './main'
+import { initialKeyListener } from './utils'
+
+
+const demo = {}
+let a1, a2, a3, a4, a5, i;
 demo.state4 = function(){};
 
 demo.state4.prototype = {
@@ -6,7 +12,7 @@ demo.state4.prototype = {
   },
   create: function(){
     game.stage.backgroundColor = '#494d54'
-    initialKeyListener()
+    initialKeyListener(game)
 
     a1 = game.add.sprite(0, 100, 'player')
     a2 = game.add.sprite(150, 100, 'player')
@@ -25,3 +31,5 @@ demo.state4.prototype = {
 
   }
 }
+
+export default demo

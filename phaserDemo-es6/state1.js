@@ -1,5 +1,9 @@
+import game from './main'
+import { initialKeyListener } from './utils'
+
+const demo = {}
 demo.state1 = function(){};
-var cursors, vel = 300, rocks, grass;
+let cursors, vel = 300, rocks, grass, player;
 
 demo.state1.prototype = {
   preload: function(){
@@ -10,7 +14,7 @@ demo.state1.prototype = {
   create: function(){
     game.physics.startSystem(Phaser.Physics.ARCADE)
     game.stage.backgroundColor = '#1a2620'
-    initialKeyListener()
+    initialKeyListener(game)
     var map = game.add.tilemap('field')
     map.addTilesetImage('grassTiles')
     map.addTilesetImage('rockTiles')
@@ -48,7 +52,7 @@ demo.state1.prototype = {
       player.body.velocity.x = -vel
     }
     else if(cursors.right.isDown){
-      player.scale.setTo(-0.2, 0.2)
+      player.scale.setTo(0.2, 0.2)
       player.body.velocity.x = vel
     }
     else {
@@ -56,3 +60,5 @@ demo.state1.prototype = {
     }
   }
 }
+
+export default demo

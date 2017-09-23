@@ -1,4 +1,9 @@
-var accel = 400, platform, platformGroup;
+import game from './main'
+import { initialKeyListener } from './utils'
+
+
+let accel = 400, platform, platformGroup, player;
+const demo = {}
 demo.state5 = function(){};
 
 demo.state5.prototype = {
@@ -8,7 +13,7 @@ demo.state5.prototype = {
   },
   create: function(){
     game.stage.backgroundColor = '#155cd8'
-    initialKeyListener()
+    initialKeyListener(game)
 
     player = game.add.sprite(500, 100, 'adam')
     platform = game.add.sprite(0, 500, 'platform')
@@ -42,3 +47,5 @@ demo.state5.prototype = {
     }
   }
 }
+
+export default demo

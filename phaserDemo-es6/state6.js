@@ -1,3 +1,7 @@
+import game from './main'
+import { initialKeyListener } from './utils'
+
+const demo = {}
 demo.state6 = function(){};
 
 demo.state6.prototype = {
@@ -8,7 +12,7 @@ demo.state6.prototype = {
   },
   create: function(){
     game.stage.backgroundColor = '#aac9ff'
-    initialKeyListener()
+    initialKeyListener(game)
 
     var volcano = game.add.sprite(this.game.world.centerX - 150, 440, 'volcano')
     volcano.scale.setTo(0.6)
@@ -35,3 +39,5 @@ demo.state6.prototype = {
 
   }
 }
+
+export default demo

@@ -1,5 +1,9 @@
-var text, sentence;
+import game from './main'
+import { initialKeyListener } from './utils'
 
+
+const demo = {}
+var text, sentence;
 demo.state8 = function(){};
 
 demo.state8.prototype = {
@@ -8,7 +12,7 @@ demo.state8.prototype = {
   },
   create: function(){
     game.stage.backgroundColor = '#4f8e5c'
-    initialKeyListener()
+    initialKeyListener(game)
     var text = `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -44,3 +48,5 @@ demo.state8.prototype = {
     }
   }
 }
+
+export default demo

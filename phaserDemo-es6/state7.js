@@ -1,3 +1,7 @@
+import game from './main'
+import { initialKeyListener } from './utils'
+
+const demo = {}
 var arrow, startPointX, startPointY, endPointX, endPointY, swipeDirection, leeway = 10;
 
 demo.state7 = function(){};
@@ -8,7 +12,7 @@ demo.state7.prototype = {
   },
   create: function(){
     game.stage.backgroundColor = '#5bea78'
-    initialKeyListener()
+    initialKeyListener(game)
 
     arrow = game.add.sprite(this.game.world.centerX - 120, 300, 'arrow')
     arrow.anchor.setTo(0.5)
@@ -50,3 +54,5 @@ demo.state7.prototype = {
     arrow.angle = swipeDirection
   }
 }
+
+export default demo
